@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+         <!-- Departamentos -->
+          <record id="object1" model="educacion.departamento">
+            <field name="name">Departamento de FOL</field>
+            <field name="num_profesores">210</field>
+          </record>
+          <record id="object2" model="educacion.departamento">
+            <field name="name">Departamento de Redes</field>
+            <field name="num_profesores">500</field>
+          </record>
+          <record id="object3" model="educacion.departamento">
+            <field name="name">Departamento de Lenguaje de Marcas</field>
+            <field name="num_profesores">105</field>
+          </record>
+          <record id="object4" model="educacion.instituto">
+            <field name="name">IES El Rincon</field>
+          </record>
+          <record id="object5" model="educacion.instituto">
+            <field name="name">IES 7 Palmas</field>
+          </record>
+          <record id="object12" model="educacion.profesor">
+            <field name="name">Alberto</field>
+            <field name="namealu">Samira</field>
+            <field name="profesores">Alberto</field>
+            <field name="nota">1</field>
+          </record>
+          <record id="object13" model="educacion.curso">
+            <field name="name">ASIR</field>
+            <field name="num_horas">2000</field>
+            <field name="tutor">Tiburcio</field>
+          </record>
+          <record id="object14" model="educacion.curso">
+            <field name="name">Multiplataforma</field>
+            <field name="num_horas">2500</field>
+            <field name="tutor">Carlos</field>
+          </record>
+          <record id="object15" model="educacion.curso">
+            <field name="name">Desarrollo web</field>
+            <field name="num_horas">2300</field>
+            <field name="tutor">Juan</field>
+          </record>
+
+        <!--  -->
+        <!--   <record id="object1" model="alumnado.alumnado"> -->
+        <!--     <field name="name">Object 1</field> -->
+        <!--     <field name="value">10</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object2" model="alumnado.alumnado"> -->
+        <!--     <field name="name">Object 2</field> -->
+        <!--     <field name="value">20</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object3" model="alumnado.alumnado"> -->
+        <!--     <field name="name">Object 3</field> -->
+        <!--     <field name="value">30</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object4" model="alumnado.alumnado"> -->
+        <!--     <field name="name">Object 4</field> -->
+        <!--     <field name="value">40</field> -->
+        <!--   </record> -->
+
+    </data>
+</odoo>

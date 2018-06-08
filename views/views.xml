@@ -1,0 +1,266 @@
+<odoo>
+  <data>
+    <!-- Vistas del Módulo de Aarón -->
+
+    <record model="ir.ui.view" id="educacion.list_instituto">
+      <field name="name">Institutos</field>
+      <field name="model">educacion.instituto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="pais_id"/>
+          <field name="direccion"/>
+          <field name="fecha_de_apertura"/>
+          <field name="foto_instituto" widget="image" width="100px" height="100px"/>
+          <field name="email"/>
+          <field name="telefono"/>
+          <field name="departamento_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="educacion.list_departamento">
+      <field name="name">Departamentos</field>
+      <field name="model">educacion.departamento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="rama_del_departamento"/>
+          <field name="num_profesores"/>
+          <field name="jefe_de_departamento"/>
+          <field name="institutos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="educacion.list_graph">
+      <field name="name">Gráfica por Departamento</field>
+      <field name="model">educacion.departamento</field>
+      <field name="arch" type="xml">
+        <graph>
+          <field name="name" type="row"/>
+          <field name="num_profesores" type="col"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- Vistas del Módulo de Eduardo -->
+
+    <record model="ir.ui.view" id="educacion.list_alumno">
+      <field name="name">Alumnado</field>
+      <field name="model">educacion.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="fecha_de_nacimiento"/>
+          <field name="foto_alumno" widget="image" width="100px" height="100px"/>
+          <field name="curso_id"/>
+          <field name="sexo"/>
+          <field name="email"/>
+          <field name="dni"/>
+          <field name="telefono"/>
+          <field name="pais_id"/>
+          <field name="insti"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="educacion.list_curso">
+      <field name="name">Cursos</field>
+      <field name="model">educacion.curso</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="num_horas"/>
+          <field name="alumnos"/>
+          <field name="tutor"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vistas del Módulo de Álvaro -->
+
+    <record model="ir.ui.view" id="educacion.list_profesor">
+      <field name="name">Profesores</field>
+      <field name="model">educacion.profesor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="dni"/>
+          <field name="salario"/>
+          <field name="foto_profesor" widget="image" width="100px" height="100px"/>
+          <field name="fecha_de_nacimiento"/>
+          <field name="notas_id"/>
+          <field name="pais_id"/>
+          <field name="curso_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="educacion.list_nota">
+      <field name="name">Notas</field>
+      <field name="model">educacion.nota</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="namealu"/>
+          <field name="profesores"/>
+          <field name="nota"/>
+        </tree>
+      </field>
+    </record>
+
+
+          <!-- Actividad ampliacion Eduardo -->
+
+    <record model="ir.ui.view" id="educacion.list_calendar">
+      <field name="name">Calendario de exámenes</field>
+      <field name="model">educacion.calendar</field>
+      <field name="arch" type="xml">
+        <calendar color="name" date_start="empiezaen" string="Calendario">
+          <field name="name"/>
+          <field name="empiezaen"/>
+          <field name="asignatura"/>
+          <field name="descrip"/>
+        </calendar>
+      </field>
+    </record>
+
+
+
+    <!-- Acciones al abrir las vistas del módulo de Aarón  -->
+
+    <record model="ir.actions.act_window" id="educacion.action_window_instituto">
+      <field name="name">Ventana de los Institutos</field>
+      <field name="res_model">educacion.instituto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="educacion.action_window_departamento">
+      <field name="name">Ventana de los Departamentos</field>
+      <field name="res_model">educacion.departamento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="educacion.action_window_graph">
+      <field name="name">Gráfica de los Profesores</field>
+      <field name="res_model">educacion.departamento</field>
+      <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <!-- Acciones al abrir las vistas del Módulo de Eduardo  -->
+
+    <record model="ir.actions.act_window" id="educacion.action_window_alumno">
+      <field name="name">Ventana de alumnado</field>
+      <field name="res_model">educacion.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="educacion.action_window_curso">
+      <field name="name">Ventana del curso</field>
+      <field name="res_model">educacion.curso</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acciones al abrir las vistas del Módulo de Álvaro -->
+
+    <record model="ir.actions.act_window" id="educacion.action_window_profesor">
+      <field name="name">Ventana de profesores</field>
+      <field name="res_model">educacion.profesor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="educacion.action_window_nota">
+      <field name="name">Ventana de profesores</field>
+      <field name="res_model">educacion.nota</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+                <!-- Actividad ampliacion Eduardo -->
+    <record model="ir.actions.act_window" id="educacion.action_window_calendar">
+      <field name="name">Calendario de exámenes</field>
+      <field name="res_model">educacion.calendar</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form,graph,calendar,pivot</field>
+    </record>
+
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="alumnado.action_server">
+      <field name="name">alumnado server</field>
+      <field name="model_id" ref="model_alumnado_alumnado"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Menú principal -->
+
+    <menuitem name="Educación" id="educacion.menu_root" sequence="0"/>
+
+    <!-- Categorías -->
+
+    <menuitem name="Institutos" id="educacion.menu_institutos" parent="educacion.menu_root" sequence="1"/>
+
+    <!-- Categorías -->
+
+    <menuitem name="Profesores" id="educacion.menu_profesores" parent="educacion.menu_root" sequence="2"/>
+
+    <!-- Categorías-->
+
+    <menuitem name="Cursos de los centros" id="educacion.menu_centros" parent="educacion.menu_root" sequence="3"/>
+
+    <!-- Categorías -->
+
+    <menuitem name="Alumnos de los centros" id="educacion.menu_alumnos" parent="educacion.menu_root" sequence="4"/>
+
+    <!-- Acciones en las Categorías de Aarón -->
+
+    <menuitem name="Listado de Institutos" id="educacion.menu_listado_instituto" parent="educacion.menu_institutos"
+              action="educacion.action_window_instituto"/>
+
+    <menuitem name="Departamentos" id="educacion.menu_listado_departamento" parent="educacion.menu_centros"
+              action="educacion.action_window_departamento"/>
+    <menuitem name="Número de Profesores" id="educacion.menu_listado_graph" parent="educacion.menu_profesores"
+              action="educacion.action_window_graph"/>
+
+
+                            <!-- Actividad ampliacion Eduardo -->
+    <menuitem name="Calendario de exámenes" id="educacion.menu_listado_calendar" parent="educacion.menu_alumnos"
+              action="educacion.action_window_calendar"/>
+
+
+    <!-- Acciones en las Categorías de Eduardo -->
+
+    <menuitem name="Alumnos matriculados" id="educacion.menu_listado_alumnos" parent="educacion.menu_alumnos"
+                        action="educacion.action_window_alumno"/>
+
+    <menuitem name="Cursos disponibles" id="educacion.menu_listado_cursos" parent="educacion.menu_centros"
+                        action="educacion.action_window_curso"/>
+
+    <!-- Acciones en las Categorías de Álvaro -->
+
+    <menuitem name="Profesores del instituto" id="educacion.menu_listado_profesores" parent="educacion.menu_profesores"
+                        action="educacion.action_window_profesor"/>
+
+    <menuitem name="Notas del alumnado" id="educacion.menu_listado_notas" parent="educacion.menu_alumnos"
+                        action="educacion.action_window_nota"/>
+
+
+
+
+  </data>
+</odoo>
